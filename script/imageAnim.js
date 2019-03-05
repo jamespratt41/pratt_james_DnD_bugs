@@ -69,11 +69,21 @@
 			})
 		});
 
+
+		function restartDropZone() {
+				dropZones.forEach(zone => {
+						zone.innerHTML = "";
+				});
+		}
+
 		function resetPuzzlePieces() {
 			// change the current puzzle, regenerate the pieces
 			// debugger;
 			// clean out the puzzle pieces div
 			piecesBoard.innerHTML = "";
+
+			
+			restartDropZone();
 
 			// generate new pieces
 			createPuzzlePieces(this.dataset.puzzleref);
